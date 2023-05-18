@@ -1,0 +1,8 @@
+
+<%- include ('partials/header') %>
+<p> <a href="/">Retour</a> </p>
+<ul>
+    <% for(let manga of mangas) {%>
+        <li class="list-text"> <a href="/manga/<%= manga.id %>"><%= manga.nom_japonais %></a></li>
+   <% } %>
+</ul>

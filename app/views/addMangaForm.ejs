@@ -1,0 +1,29 @@
+
+<%- include ('partials/header') %>
+
+<h2 class="subtitle"> Ajouter un manga à la mangathèque </h2>
+
+<form method="POST">
+    <p class="subtitle">
+    <label for="nom-fr">Nom en français : </label>
+    <input type="text" id="nom-fr" name="Nom_français">
+    </p>
+
+    <p class="subtitle">
+    <label for="nom-jp">Nom en japonais (ロマジ): </label>
+    <input type="text" id="nom-fr" name="Nom_japonais">
+    </p>
+
+    <p class="subtitle">
+    <label for="genre"> Genre : </label>
+    <input type="text" id="genre" name="Genres">
+    </p>
+    <p class="subtitle">
+    <label for="status"> Status : </label>
+    <input type="text" id="status" name="Lecture_manga">
+    </p>
+    <p class="subtitle">
+    <input type="submit" value="Ajouter">
+    </p>
+</form>
+
