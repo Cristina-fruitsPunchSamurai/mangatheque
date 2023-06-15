@@ -39,8 +39,13 @@ const adminController = {
         const mangaInfoGenres = req.body.Genres
         const mangaInfoStatus = req.body.Lecture_manga
         */
-        const result = await dataMapper.insertMangaDB(formInfo);
-        res.send('Ajout effectué')
+       try{
+           const result = await dataMapper.insertMangaDB(formInfo);
+           res.send('Ajout effectué')
+       } catch (error){
+            console.trace(error)
+            res.status(500).send('Error on insertManga')
+       }
 
     }
 }

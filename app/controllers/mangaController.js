@@ -1,33 +1,37 @@
-// Appel au dataMapper
-const dataMapper = require('../dataMapper');
+const {Bd, Tag} = require('../models');
 
 const mangaController = {
-    //Liste de tous les mangas
-    async mangaList(req, res) {
+
+    mangaList: async (req,res) => {
         try {
-            const result = await dataMapper.findAllMangas();
-            console.log(result)
-            res.render('mangaList',{
-                mangas : result
-            });
-        }catch (error) {
-            console.trace(error)
-            res.status(500).send('Error on mangaList')
-        }
-    },
-    //Page info detail de chaque manga
-    async mangaDetail (req,res) {
-        const mangaId = req.params.id;
-        try{
-            const foundManga = await dataMapper.findMangaDetail(mangaId)
-            res.render('mangaDetail', {foundManga : foundManga})
+            const titles = await Bd.findAll({
+                include: 'tags',
+            })
+            return res.render('mangaList', {titles})
 
         } catch (error) {
-            console.trace(error);
-            res.status(500).send('Error on mangaDetail')
+            console.log(error.message);
+            console.log(error.stack);
+            return res.status(500).send('Une erreur sur mangaList controller');
         }
+    },
 
+    mangaDetail: async(req,res) => {
+        const mangaId = parseInt(req.params.id,10)
+
+        try{
+            const bdDetail = await Bd.findByPk(mangaId, {
+                include: 'tags'
+            });
+
+            return res.render('mangaDetail', {bdDetail})
+        }catch(error) {
+            console.log(error.message);
+            console.log(error.stack);
+            return res.status(500).send('Une erreur sur mangaDetail controller');
+        }
     }
-}
 
-module.exports = mangaController;
+ };
+
+ module.exports = mangaController;

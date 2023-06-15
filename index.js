@@ -1,23 +1,16 @@
-
-const express = require("express");
 // pour utiliser notre fichier .env
 require('dotenv').config();
+const express = require("express");
+const app = express();
 // nous demandons à express d'utiliser session AVANT le router
 const session = require('express-session');
-
+const path = require('path');
 const router = require('./app/router');
-const app = express();
 
-// le port est planqué dans le .env, on le récupère
-const port = process.env.PORT;
+// Body parser
+app.use(express.urlencoded({ extended: true }));
 
-app.set("view engine", "ejs");
-app.set("views", "./app/views");
-app.use(express.static("public"));
-
-app.use(express.urlencoded({ extended: true }))
-
-
+//Charger les données de la session  sur 'req.session' et 'res.locals'
 app.use(session({
     secret: 'keyboard cat"', // le "secret" qui sert à générer les identifiants de sessions uniques.
     resave: true, // sauvegarde automatique de la session à la fin de la requête
@@ -27,15 +20,22 @@ app.use(session({
     }
 }));
 
+//Setup view engine
+app.set("view engine", "ejs");
+app.set("views", "./app/views");
 
+//Use static files
+app.use(express.static(path.join(__dirname, "public")));
 
+// Mes routes
 app.use(router);
 
-
+//middleware 404
 app.use((req, res, next) => {
     res.status(404).send("404 - NOT FOUND");
 })
 
-app.listen(port, () => {
-    console.log(`listening on port ${port}`);
-})
+// le port est planqué dans le .env, on le récupère
+app.listen(process.env.PORT, () =>
+    console.log(`Listening on ${process.env.BASE_URL}:${process.env.PORT}`)
+);

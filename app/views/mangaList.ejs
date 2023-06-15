@@ -1,8 +1,40 @@
 
 <%- include ('partials/header') %>
-<p> <a href="/">Retour</a> </p>
-<ul>
-    <% for(let manga of mangas) {%>
-        <li class="list-text"> <a href="/manga/<%= manga.id %>"><%= manga.nom_japonais %></a></li>
-   <% } %>
-</ul>
+
+<%- include ('partials/menu') %>
+
+<!-- -> card -->
+<main>
+    <% if (locals.titles && locals.titles.length > 0 ){%>
+        <div class="mangaList__container">
+            <% for(let title of titles) {%>
+                <div class="card list-text">
+                    <p class="mangaList__title-container">
+                        <a class="mangaList__title" href="/manga/<%= title.id %>">
+                            <%= title.title %>
+                        </a>
+                    </p>
+                    <!-- -> Boucle sur le tableau Tags de l'objet titles -->
+                    <ul class="manga__category">
+                        <% for(tag of title.tags) {%>
+                            <li class="manga__category__<%= tag.name %>">
+                                <%= tag.name %>
+                            </li>
+                            <%}%>
+                    </ul>
+                    <!-- -> -->
+                    <p class="mangaList__img__container">
+                        <img class="mangaList__img" src="<%= title.image %>">
+                    </p>
+                    <a href="/manga/<%= title.id %>">
+                        <button class="style-5"> More info ⚡</button>
+                    </a>
+                </div>
+                <% } %>
+        </div>
+
+    <%} else {%>
+        <p> No manga titles yet</p>
+    <%}%>
+
+</main>

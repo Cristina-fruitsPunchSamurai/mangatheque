@@ -1,10 +1,38 @@
 
 <%- include ('partials/header') %>
 
-<h4> <%= foundManga.nom_japonais %> </h4>
-<p class="detail-category">
-   <span class="detail-category-title"> Genre : </span>  <%= foundManga.genres %>
-</p>
-<p class="detail-category">
-    <span class="detail-category-title">Status : </span><%= foundManga.lecture_manga %>
-</p>
+<%- include ('partials/menu') %>
+    <main>
+            <div class="mangaDetail__container">
+                <img class="mangaDetail__img" src="<%= bdDetail.image%>">
+
+                <!-- //le tableau Tags que j'ai reçu sur ma requete Bd -->
+                <ul class="mangaDetail__category-liste">
+                    <% bdDetail.tags.forEach((tag)=> {%>
+                        <li class="manga__category__<%= tag.name%>">
+                            <%= tag.name%>
+                        </li>
+                    <% });%>
+                </ul>
+                <!-- -> -->
+
+                <p>
+                    <span class="mangaDetail__title"> Title : </span>
+                    <%= bdDetail.title%>
+                </p>
+                <p>
+                    <span class="mangaDetail__title"> Foreign title : </span>
+                    <%= bdDetail.original_title%>
+                </p>
+                <p>
+                    <span class="mangaDetail__title"> Format : </span>
+                    <%= bdDetail.format%>
+                </p>
+                <p>
+                    <span class="mangaDetail__title"> Status : </span>
+                    <%= bdDetail.status%>
+                </p>
+            </div>
+    </main>
+</body>
+</html>
