@@ -7,7 +7,8 @@ const mangaController = {
             const titles = await Bd.findAll({
                 include: 'tags',
             })
-            return res.render('mangaList', {titles})
+            const titlesCount = await Bd.count()
+            return res.render('mangaList', {titles, titlesCount})
 
         } catch (error) {
             console.log(error.message);

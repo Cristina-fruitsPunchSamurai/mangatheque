@@ -18,12 +18,11 @@ const tagController = {
         const tagName = req.params.name;
 
         try {
-            const tagContains = await Tag.findOne({
+            const mangaOfTag = await Tag.findOne({
                 where: { name: tagName },
                 include: 'mangas'
             })
-            console.log(tagContains)
-            return res.render('category')
+            return res.render('category', {mangaOfTag})
 
         }catch(error){
             console.log(error.message)

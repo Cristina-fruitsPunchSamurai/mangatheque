@@ -3,3 +3,23 @@
 <%- include ('partials/menu') %>
 
 <!-- Afficher les mangas par categorie et le nombre de lignes -->
+<main>
+    <div class="manga__tag-container">
+        <% mangaOfTag.mangas.forEach((oeuvre) => {%>
+            <div class="manga__card">
+                <img class="manga__card-image" src="<%= oeuvre.image %>">
+                <div class="manga__card-info">
+                    <p>
+                        <%= oeuvre.title %>
+                    </p>
+                    <p>
+                        Author : <%= oeuvre.author %>
+                    </p>
+                </div>
+            </div>
+        <%})%>
+
+
+
+    </div>
+</main>

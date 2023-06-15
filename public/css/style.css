@@ -272,7 +272,7 @@ button {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-size: 1em;
     align-items: center;
 }
@@ -298,17 +298,47 @@ button {
 }
 
 
-/* -> Catégories */
+/* -> All Catégories */
 .categories__container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: 'Rubik', sans-serif;
+    margin: 7rem;
+}
+
+.categories__item{
+    width: 200px;
+    height: 30px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.3em;
+    margin-bottom: 4rem;
+}
+
+
+/* -> Mangas par Category */
+.manga__tag-container{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 5%;
 }
 
-.categories__item{
-    width: 250px;
-    padding: 1%;
-    margin-bottom: 2%;
+.manga__card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: solid #000000;
+    width: 200px;
+    font-family: 'Rubik', sans-serif;
+    margin: 1%;
+}
 
+.manga__card-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.manga__card-image {
+    width: 100%;
 }
