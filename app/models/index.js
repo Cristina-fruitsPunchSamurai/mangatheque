@@ -1,6 +1,7 @@
 const Bd = require('./bd');
 const Tag = require('./tag');
-//const User = require('./user');
+const User = require('./user');
+const Role = require('./role');
 
 // * BD et Tag
 Bd.belongsToMany(Tag,{
@@ -17,4 +18,15 @@ Tag.belongsToMany(Bd, {
     otherKey: 'bd_id',
 });
 
-module.exports = {Bd, Tag};
+// * User et Role
+User.belongsTo(Role,{
+    foreignKey:'role_id',
+    as:'role',
+});
+
+Role.hasMany(User,{
+    foreignKey: 'role_id',
+    as: 'users',
+});
+
+module.exports = {Bd, Tag, User, Role};

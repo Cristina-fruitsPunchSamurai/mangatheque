@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding:0;
+    background-color: #ECF2F7;
 }
 
 /* -> Home */
@@ -66,18 +67,20 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    background-color: #ECF2F7;
 }
 
 .card {
     display: flex;
     flex-direction: column;
     margin: 10px;
-    width: 300px;
+    width: 250px;
     height: auto;
-    border: 3px solid #ffb051;
-    border-radius: 10px;
+    border: 1px solid #c3c0bd;
+    border-radius: 5px;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    background-color: #ffffff;
 }
 
 .mangaList__title-container {
@@ -90,14 +93,13 @@ a {
     text-align: center;
     font-weight:700;
     font-family: 'Rubik', sans-serif;
-    font-size: 1.3em;
+    font-size: 1.2em;
 
 }
 
 .mangaList__img {
-    width: 200px;
+    width: 100%;
     height: auto;
-    border-radius: 25px;
 }
 
 button {
@@ -247,7 +249,7 @@ button {
     display: flex;
     height: 100px;
     padding-right: 10px;
-    background-color: #1d96c1;
+    background-color: #48556A;
     justify-content: flex-end;
     align-items: center;
 }
@@ -261,7 +263,7 @@ button {
     color: #ffffff;
     font-family: 'Amatic SC',
     cursive;
-    font-size: 2em;
+    font-size: 1.5em;
     padding: 20px;
 }
 
@@ -341,4 +343,53 @@ button {
 
 .manga__card-image {
     width: 100%;
+}
+
+/* -> Register */
+.register__form{
+    width: 800px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:7%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+}
+
+.register__form-left {
+    border-radius: 15px;
+    width: 50%;
+    background-color: #ffffff;
+}
+
+.register__form-right{
+    border-radius: 15px;
+    width: 50%;
+    background-color: #E9DACB;
+}
+
+.register__form-title{
+    font-size: 1.5em;
+}
+
+.register__form-infos{
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register__form-button{
+    background-color: #F2EEE3;
+    font-size: 1em;
+    font-weight: 400;
+    width: 100px;
+    border: 2px solid #48556A;
+    border-radius: 50px;
 }

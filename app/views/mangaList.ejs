@@ -20,9 +20,11 @@
                     <!-- -> Boucle sur le tableau Tags de l'objet titles -->
                     <ul class="manga__category">
                         <% for(tag of title.tags) {%>
-                            <li class="manga__category__<%= tag.name %>">
-                                <%= tag.name %>
-                            </li>
+                            <a href="categories/<%= tag.name %>">
+                                <li class="manga__category__<%= tag.name %>">
+                                    <%= tag.name %>
+                                </li>
+                            </a>
                             <%}%>
                     </ul>
                     <!-- -> -->
@@ -41,3 +43,6 @@
     <%}%>
 
 </main>
+</body>
+
+</html>

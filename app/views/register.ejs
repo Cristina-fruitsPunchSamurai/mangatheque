@@ -1,0 +1,43 @@
+<%- include ('partials/header') %>
+
+<%- include ('partials/menu') %>
+
+<%if (locals.error) {%>
+    <%= error %>
+        <%}%>
+
+<main class="register__form">
+    <div class="register__form-left">
+        <h2 class="register__form-title"> Sign up here! </h2>
+        <form  action="" method="POST" class="register__form-infos">
+            <p class="">
+                <label for="username"> Username : </label>
+                <input type="text" placeholder="user" id="username" name="username">
+            </p>
+            <p class="">
+                <label for="username"> Email : </label>
+                <input type="email" placeholder="email" id="email" name="email">
+            </p>
+            <p>
+                <label for="password"> Password : </label>
+                <input type="password" placeholder="password" id="password" name="password">
+            </p>
+            <p>
+                <input class="register__form-button" type="submit" value="SIGN IN">
+            </p>
+        </form>
+    </div>
+    <div class="register__form-right">
+        <div  class="register__form-infos">
+            <h2 class="register__form-title">Hello there! </h2>
+            <p> If you're already a member signup with your user info
+            </p>
+            <a href="/login">
+            <button class="register__form-button"> SIGN UP </button>
+            </a>
+        </div>
+    </div>
+</main>
+</body>
+
+</html>

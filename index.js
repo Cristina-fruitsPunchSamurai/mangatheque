@@ -6,13 +6,14 @@ const app = express();
 const session = require('express-session');
 const path = require('path');
 const router = require('./app/router');
+const addUserToLocals = require('./middlewares/addUserToLocals')
 
 // Body parser
 app.use(express.urlencoded({ extended: true }));
 
 //Charger les données de la session  sur 'req.session' et 'res.locals'
 app.use(session({
-    secret: 'keyboard cat"', // le "secret" qui sert à générer les identifiants de sessions uniques.
+    secret: process.env.SECRET, // le "secret" qui sert à générer les identifiants de sessions uniques.
     resave: true, // sauvegarde automatique de la session à la fin de la requête
     saveUninitialized: true, // créer une session pour l'internaute dans tous les cas, mais si elle est vide.
     cookie: {
@@ -20,6 +21,7 @@ app.use(session({
     }
 }));
 
+app.use(addUserToLocals);
 //Setup view engine
 app.set("view engine", "ejs");
 app.set("views", "./app/views");

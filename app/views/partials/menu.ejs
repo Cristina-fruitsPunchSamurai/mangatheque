@@ -1,6 +1,29 @@
 <body>
 <div class="menu">
-    <div class="menu__titre"> <a class="menu__link" href="/"> Home </a></div>
-    <div class="menu__titre"> <a class="menu__link" href="/admin/addManga/"> Add new manga </a> </div>
-    <div class="menu__titre"> <a class="menu__link" href="/categories"> Categories </a> </div>
+    <div class="menu__titre">
+        <a class="menu__link" href="/"> Home </a>
+    </div>
+<!--     <div class="menu__titre">
+        <a class="menu__link" href="/admin/addManga/"> Add new manga </a>
+    </div> -->
+        <div class="menu__titre">
+            <a class="menu__link" href="/categories"> Categories </a>
+        </div>
+        <%if (!locals.user) {%>
+        <div class="menu__titre">
+            <a class="menu__link" href="/register"> Signup </a>
+        </div>
+        <div class="menu__titre">
+            <a class="menu__link" href="/login"> Login </a>
+        </div>
+    <%} else {%>
+        <div class="menu__titre">
+            <a class="menu__link" href="/logout"> <%= locals.user.username %> </a>
+        </div>
+        <div class="menu__titre">
+            <a class="menu__link" href="/logout"> Logout </a>
+        </div>
+
+    <%}%>
+
 </div>
