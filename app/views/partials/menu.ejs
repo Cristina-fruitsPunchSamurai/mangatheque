@@ -1,4 +1,57 @@
 <body>
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <div class="navbar-logo-container">
+            <a href="/">
+                <img class="navbar-logo" src="/images/logo-white-banner.png">
+            </a>
+        </div>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div  class="navbar-menu">
+        <div class="navbar-start">
+            <a href="/" class="navbar-item">
+                Home
+            </a>
+
+            <a href="/categories/" class="navbar-item">
+                Categories
+            </a>
+            <a href="/list/" class="navbar-item">
+                Books
+            </a>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <%if (!locals.user) {%>
+                    <a href="/register" class="button is-primary">
+                        <strong>Sign up</strong>
+                    </a>
+                    <a href="/login" class="button is-light">
+                        Log in
+                    </a>
+                    <%} else { %>
+                        <a class="navbar-item">
+                            <%= locals.user.username %>
+                        </a>
+                        <a href="/logout" class="button is-primary">
+                            <strong> Logout </strong>
+                        </a>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<!--
 <div class="menu">
     <div class="menu__titre">
         <a class="menu__link" href="/"> Home </a>
@@ -6,24 +59,24 @@
 <!--     <div class="menu__titre">
         <a class="menu__link" href="/admin/addManga/"> Add new manga </a>
     </div> -->
-        <div class="menu__titre">
+        <!-- <div class="menu__titre">
             <a class="menu__link" href="/categories"> Categories </a>
         </div>
-        <%if (!locals.user) {%>
-        <div class="menu__titre">
+        <!-- <%if (!locals.user) {%> -->
+        <!-- <div class="menu__titre">
             <a class="menu__link" href="/register"> Signup </a>
         </div>
         <div class="menu__titre">
             <a class="menu__link" href="/login"> Login </a>
-        </div>
-    <%} else {%>
-        <div class="menu__titre">
-            <a class="menu__link" href="/logout"> <%= locals.user.username %> </a>
-        </div>
+        </div> -->
+    <!-- <%} else {%> -->
+        <!-- <div class="menu__titre">
+            <!-- <a class="menu__link" href="/logout"> <%= locals.user.username %> </a> -->
+        <!-- </div>
         <div class="menu__titre">
             <a class="menu__link" href="/logout"> Logout </a>
-        </div>
+        </div> -->
 
-    <%}%>
+    <!-- <%}%> -->
 
-</div>
+<!-- </div> -->

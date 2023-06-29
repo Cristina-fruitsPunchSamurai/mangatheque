@@ -46,8 +46,8 @@ const loginController = {
 
             //On cree une session user
             req.session.user = formattedUser;
-            console.log(req.session.user)
-            res.redirect('/list');
+            //console.log(req.session.user)
+            res.redirect('/');
 
         }catch(error){
             console.log(error.message)

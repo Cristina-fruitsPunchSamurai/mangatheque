@@ -32,13 +32,6 @@ const adminController = {
     async insertManga(req,res) {
         const formInfo = req.body
 
-        ////// params body method post //////
-        /*
-        const mangaInfoNameFr = req.body.Nom_français
-        const mangaInfoNameJp = req.body.Nom_japonais
-        const mangaInfoGenres = req.body.Genres
-        const mangaInfoStatus = req.body.Lecture_manga
-        */
        try{
            const result = await dataMapper.insertMangaDB(formInfo);
            res.send('Ajout effectué')

@@ -1,50 +1,46 @@
+
 body {
     margin: 0;
     padding:0;
-    background-color: #ECF2F7;
+
 }
 
 /* -> Home */
 .homePage__container{
-    background-color: #1d96c1;
-}
-
-.homePage__title__container {
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    top: 0;
-}
-
-.title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Amatic SC', cursive;
-    font-weight: 700;
-    font-size: 7em;
-    color: #ffffff;
-    margin:0;
-    height: 300px;
-}
-
-.homePage__nav {
-    display: grid;
-    background-color: #ffb051;
+    /* background-color: #1d96c1; */
+    background-image: url("../images/bg.avif");
     height: 100vh;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    justify-items: center;
-    align-items: center;
 }
 
-.homePage__subtitle {
+.home_logo{
+    height: auto;
+    max-width: 50%;
     display: flex;
-    justify-content: center;
-    font-family: 'Rubik', sans-serif;
-    font-weight: 500;
-    font-size: 2em;
+    opacity: 84%;
+    padding-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.home-btn {
+    width: 20%;
+    display: flex;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-brand {
+    align-items: stretch;
+    display: flex;
+    height: 5rem;
+}
+
+.navbar-logo{
+    width: 12rem;
+    height: 5rem;
+}
+
 
 .list-text{
     font-family: 'Rubik', sans-serif;
@@ -62,19 +58,23 @@ a {
 
 
 /* -> Liste all titles */
+.manga-list{
+    margin-top: 7rem;
+}
+
 .mangaList__container {
-    margin: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background-color: #ECF2F7;
 }
 
 .card {
     display: flex;
     flex-direction: column;
     margin: 10px;
-    width: 250px;
+    width: 200px;
     height: auto;
     border: 1px solid #c3c0bd;
     border-radius: 5px;
@@ -307,14 +307,16 @@ button {
     flex-wrap: wrap;
     font-family: 'Rubik', sans-serif;
     margin: 7rem;
+    gap: 10px;
 }
 
 .categories__item{
-    width: 200px;
-    height: 30px;
+    width: 150px;
+    height: 40px;
     font-family: 'Rubik', sans-serif;
-    font-size: 1.3em;
-    margin-bottom: 4rem;
+    font-size: 1.2em;
+    border-radius: 15px;
+    padding: 3%;
 }
 
 
