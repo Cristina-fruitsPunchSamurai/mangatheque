@@ -6,8 +6,15 @@
 <!-- AJOUTER LE NOMBRE DE MANGAS LUS -->
 
 <!-- -> card -->
-<main class="manga-list">
-    <h1> Mangas read : <%= titlesCount %> Objective : 1000</h1>
+<main>
+    <div class="content is-small manga-list">
+        <h1>
+            <% if(locals.user) {%>
+                 <%= locals.user.username %>,
+                <% }%> You have read : <%= titlesCount %> books 👏 !
+        </h1>
+    </div>
+
     <% if (locals.titles && locals.titles.length > 0 ){%>
         <div class="mangaList__container">
             <% for(let title of titles) {%>

@@ -15,14 +15,20 @@ const tagController = {
     },
 
     tagTitles: async (req, res) => {
-        const tagName = req.params.name;
-
         try {
+            const tagName = req.params.name;
             const mangaOfTag = await Tag.findOne({
                 where: { name: tagName },
                 include: 'mangas'
             })
-            return res.render('category', {mangaOfTag})
+            const titlesArray = []
+
+            mangaOfTag.mangas.forEach((title) => {
+                titlesArray.push(title);
+            });
+            const titleCount = titlesArray.length;
+
+            return res.render('category', {mangaOfTag, titleCount})
 
         }catch(error){
             console.log(error.message)

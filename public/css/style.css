@@ -62,6 +62,11 @@ a {
     margin-top: 7rem;
 }
 
+.content h1{
+    text-align: center;
+    color: #5A5A5A;
+}
+
 .mangaList__container {
     margin-left: 5%;
     margin-right: 5%;
@@ -321,11 +326,33 @@ button {
 
 
 /* -> Mangas par Category */
+.liste-bd-tag{
+    margin-top:7rem ;
+}
+
+.liste-bd-tag-header {
+    margin-right: 5rem;
+    margin-left: 5rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.list-bd-return{
+    text-decoration: underline;
+}
+
+.tag-item {
+    width: 100px;
+    height: 30px;
+}
+
 .manga__tag-container{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .manga__card{
@@ -394,4 +421,14 @@ button {
     width: 100px;
     border: 2px solid #48556A;
     border-radius: 50px;
+}
+
+/* -> Login */
+.login-form{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-top: 7rem;
 }

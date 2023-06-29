@@ -3,7 +3,25 @@
 <%- include ('partials/menu') %>
 
 <!-- Afficher les mangas par categorie et le nombre de lignes -->
-<main>
+<section class="liste-bd-tag">
+    <div class="liste-bd-tag-header">
+        <div class="content">
+            <p class="tag-item manga__category__<%= mangaOfTag.name %>">
+                  <%= mangaOfTag.name %>
+            </p>
+            <p>
+                You have read or watched <%= titleCount %> works on this
+                tag
+            </p>
+        </div>
+        <div class="content">
+            <p class="list-bd-return">
+                <a href="/categories/"> Return to tag list</a>
+            </p>
+        </div>
+
+    </div>
+
     <div class="manga__tag-container">
         <% mangaOfTag.mangas.forEach((oeuvre) => {%>
             <div class="manga__card">
@@ -18,11 +36,8 @@
                 </div>
             </div>
         <%})%>
-
-
-
     </div>
-</main>
+</section>
 </body>
 
 </html>

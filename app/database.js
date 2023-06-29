@@ -10,7 +10,7 @@ const sequelize = new Sequelize(process.env.PG_URL,{
         updatedAt: 'updated_at',
         createdAt: 'created_at',
     },
-    logging: false, // pour disable le console.log de toutes les requetes, on evite de polluer le terminal
+    //logging: false, // pour disable le console.log de toutes les requetes, on evite de polluer le terminal
 });
 
 

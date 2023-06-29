@@ -3,18 +3,23 @@
 <%- include ('partials/menu') %>
 
 <main>
+    <!-- si tags -->
+    <% if (locals.tags && locals.tags.length) {%>
+        <div class="categories__container">
+            <!--  alors j'affiche les tags -->
+            <% tags.forEach((tag) => { %>
+                <a href="/categories/<%= tag.name %>">
+                    <div class="categories__item manga__category__<%= tag.name %>">
+                        <%= tag.name %>
+                    </div>
+                </a>
+            <%}); %>
+        </div>
 
-    <div class="categories__container">
-    <% tags.forEach((tag) => { %>
-        <a href="/categories/<%= tag.name %>">
-            <div class="categories__item manga__category__<%= tag.name %>">
-                <%= tag.name %>
-            </div>
-        </a>
-   <% }); %>
+    <%}%>
 
-    </div>
 </main>
+
 </body>
 
 </html>

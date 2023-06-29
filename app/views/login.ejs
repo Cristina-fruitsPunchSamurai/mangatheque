@@ -7,44 +7,54 @@
     <%= message %>
         <%}%>
 
-<h2 class="subtitle"> Pour ajouter un manga, connectes-toi !</h2>
-
-
-<form action="" method="POST">
-    <div class="field">
-        <label for="username" class="username"> Username </label>
-        <div class="control">
-            <input class="input" type="text" placeholder="e.g John-Lennon" id="username" name="username">
+<main class="login-form"">
+    <div class="content">
+        <h1>Login ✨</h1>
+    </div>
+    <form action="" method="POST">
+        <div class="field">
+            <label for="username" class="username"> Username </label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input is-success" type="text" placeholder="e.g John-Lennon" id="username" name="username">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </div>
         </div>
-    </div>
-    <div class="field">
-        <p class="control has-icons-left">
-            <label for="password" class="username"> Password </label>
-            <input class="input" type="password" placeholder="Password" id="password" name="password">
-            <span class="icon is-small is-left">
-                <i class="fas fa-lock"></i>
-            </span>
-        </p>
-    </div>
-    <div class="field">
-        <p class="control">
-            <button class="button is-success">
-                Login
-            </button>
-        </p>
-    </div>
-    <!-- <p class="">
-        <label for="username"> Username : </label>
-        <input type="text" placeholder="user" id="username" name="username">
-    </p> -->
-    <!-- <p>
-        <label for="password"> Password : </label>
-        <input type="password" placeholder="password" id="password" name="password">
-    </p> -->
-    <!-- <p class="">
-        <input type="submit" value="Valider">
-    </p> -->
-</form>
+        <div class="field">
+            <label for="password" class="password"> Password </label>
+                <p class="control has-icons-left">
+                    <input class="input" type="password" placeholder="password" id="password" name="password">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </p>
+        </div>
+        <div class="field">
+            <p class="control">
+                <button class="button is-success">
+                    Login
+                </button>
+            </p>
+        </div>
+        <!-- <p class="">
+            <label for="username"> Username : </label>
+            <input type="text" placeholder="user" id="username" name="username">
+        </p> -->
+        <!-- <p>
+            <label for="password"> Password : </label>
+            <input type="password" placeholder="password" id="password" name="password">
+        </p> -->
+        <!-- <p class="">
+            <input type="submit" value="Valider">
+        </p> -->
+    </form>
+</main>
+
 </body>
+
 
 </html>
