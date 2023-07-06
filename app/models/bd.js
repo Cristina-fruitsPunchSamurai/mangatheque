@@ -14,11 +14,11 @@ Bd.init(
             allowNull: false,
         },
         format: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         status: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         author: {

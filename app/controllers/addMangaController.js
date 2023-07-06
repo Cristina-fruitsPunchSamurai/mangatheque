@@ -1,4 +1,5 @@
 const { Bd } = require('../models');
+const { Sequelize } = require('sequelize');
 
 const addMangaController = {
 
@@ -16,7 +17,6 @@ const addMangaController = {
                     // image
                 } = req.body;
 
-                //-> ICI OK sauf radio//  console.log(req.body)
 
             //Vérification 1
             if (!title ||
@@ -34,7 +34,7 @@ const addMangaController = {
             const searchedTitle = await Bd.findOne({
                 where: { title },
             });
-            //-> ICI OK //  console.log(searchedTitle)
+
 
             if(searchedTitle) {
                     return res.render('addMangaForm', {
@@ -46,10 +46,12 @@ const addMangaController = {
                     original_title,
                     format,
                     status,
-                    author
-                    // image : image
+                    author,
+                    //image
                 })
-                console.log(newTitle)
+
+
+            console.log('Titre ajouté à la BDD', newTitle)
 
                 let message = "Le manga a été ajoutée"
 
