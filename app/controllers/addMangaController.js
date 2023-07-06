@@ -47,9 +47,10 @@ const addMangaController = {
                     format,
                     status,
                     author,
-                    //image
+                    image: ''
                 })
 
+    console.log(newTitle);
 
             console.log('Titre ajouté à la BDD', newTitle)
 
@@ -57,7 +58,7 @@ const addMangaController = {
 
                 console.log('Manga ajoutée')
 
-            return res.render('/form', { message, error})
+            return res.render('/form', { message})
 
             } catch(error){
             console.log(error.message)
