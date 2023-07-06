@@ -1,4 +1,4 @@
-const {Bd, Tag} = require('../models');
+const { Bd } = require('../models');
 
 const mangaController = {
 
@@ -31,7 +31,7 @@ const mangaController = {
             console.log(error.stack);
             return res.status(500).send('Une erreur sur mangaDetail controller');
         }
-    }
+    },
 
  };
 

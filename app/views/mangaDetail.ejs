@@ -32,7 +32,16 @@
                     <span class="mangaDetail__title"> Status : </span>
                     <%= bdDetail.status%>
                 </p>
+                <div id="bd-<%= bdDetail.id%>">
+                    <ion-icon id="star-1" class="stars" name="star-outline"></ion-icon>
+                    <ion-icon id="star-2" class="stars" name="star-outline"></ion-icon>
+                    <ion-icon id="star-3" class="stars" name="star-outline"></ion-icon>
+                    <ion-icon id="star-4" class="stars" name="star-outline"></ion-icon>
+                    <ion-icon id="star-5" class="stars" name="star-outline"></ion-icon>
+                </div>
             </div>
     </main>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

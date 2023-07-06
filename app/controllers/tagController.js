@@ -17,6 +17,7 @@ const tagController = {
     tagTitles: async (req, res) => {
         try {
             const tagName = req.params.name;
+
             const mangaOfTag = await Tag.findOne({
                 where: { name: tagName },
                 include: 'mangas'

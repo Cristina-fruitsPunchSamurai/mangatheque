@@ -1,5 +1,5 @@
 // Appel au dataMapper
-const dataMapper = require('../dataMapper');
+//const dataMapper = require('../dataMapper');
 
 const adminController = {
 
@@ -36,7 +36,7 @@ const adminController = {
            const result = await dataMapper.insertMangaDB(formInfo);
            res.send('Ajout effectué')
        } catch (error){
-            console.trace(error)
+            console.log(error)
             res.status(500).send('Error on insertManga')
        }
 

@@ -7,13 +7,18 @@ const mangaController = require('./controllers/mangaController');
 const tagController = require('./controllers/tagController');
 const loginController = require('./controllers/loginController');
 const signupController = require('./controllers/signupController');
+const addMangaController = require('./controllers/addMangaController');
 // const adminController = require('./controllers/adminController');
 
 ////////// Routes
+
 //Mangas
 router.get('/', homeController.welcome);
 router.get('/list', mangaController.mangaList);
 router.get('/manga/:id', mangaController.mangaDetail);
+
+router.get('/form', addMangaController.addMangaForm);
+router.post('/form', addMangaController.createNewTitle);
 
 //Catégories
 router.get('/categories', tagController.showTags);

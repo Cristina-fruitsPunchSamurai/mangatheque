@@ -1,34 +1,92 @@
 
 <%- include ('partials/header') %>
 
-<h2 class="subtitle"> Ajouter un manga à la mangathèque </h2>
+<%- include ('partials/menu') %>
 
-<form method="POST">
-    <p class="subtitle">
-    <label for="nom-fr">Nom en français : </label>
-    <input type="text" id="nom-fr" name="Nom_français">
-    </p>
+<div class="add-manga-form">
+    <div class="content is-small">
+        <h2 class="subtitle"> Ajouter un titre à la mangathèque </h2>
+    </div>
 
-    <p class="subtitle">
-    <label for="nom-jp">Nom en japonais (ロマジ): </label>
-    <input type="text" id="nom-fr" name="Nom_japonais">
-    </p>
+    <% if(locals.message) {%>
+        <%- message %>
+   <% }%>
 
-    <p class="subtitle">
-    <label for="genre"> Genre : </label>
-    <input type="text" id="genre" name="Genres">
-    </p>
+    <% if(locals.error) {%>
+        <%- error %>
+            <% }%>
 
-    <!-- COULEUR DU TAG TYPE COLOR -->
-    <p class="subtitle">
-    <label for="status"> Status : </label>
-    <input type="text" id="status" name="Lecture_manga">
-    </p>
-    <p class="subtitle">
-    <input type="submit" value="Ajouter">
-    </p>
-</form>
+    <form method="POST">
+        <!-- Titre Japonais-->
+        <div class="field">
+            <label for="jp-name" class="label">Japanese title (ロマジ)</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Japanese Title" id="jp-name" name="title">
+                </div>
+        </div>
 
+        <!-- Titre -->
+        <div class="field">
+            <label for="foreign-name" class="label">Foreign title</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Foreign title" id="foreign-name" name="original_title">
+                </div>
+        </div>
+
+        <!-- Format -->
+        <div class="control">
+            <legend class="has-text-weight-bold"> Format </legend>
+                <label for="manga" class="radio">
+                    <input type="radio" name="format" id="manga">
+                    Manga
+                </label>
+                <label for="webtoon" class="radio">
+                    <input type="radio" name="format" id="webtoon">
+                    Webtoon
+                </label>
+                <label for="film" class="radio">
+                    <input type="radio" name="format" id="film">
+                    Film
+                </label>
+                <label for="anime" class="radio">
+                    <input type="radio" name="format" id="anime">
+                    Anime
+                </label>
+        </div>
+
+        <!-- Status -->
+        <div class="control">
+            <legend class="has-text-weight-bold"> Status </legend>
+                <label for="finished" class="radio">
+                    <input type="radio" name="status" id="finished">
+                    Finished
+                </label>
+                <label for="ongoing" class="radio">
+                    <input type="radio" name="status" id="ongoing">
+                    Ongoing
+                </label>
+        </div>
+
+        <!-- Auteur -->
+        <div class="field">
+            <label for="author" class="label"> Author</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Author" id="author" name="author">
+                </div>
+        </div>
+
+        <!-- Image -->
+        <div class="field">
+            <label for="image" class="label"> Link image</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="image" id="image" name="image">
+                </div>
+        </div>
+
+        <!-- Submit -->
+        <button class="button is-primary">Add manga +</button>
+    </form>
+</div>
 </body>
 
 </html>
