@@ -1,4 +1,4 @@
-const { Bd } = require('../models');
+const { Bd, Tag } = require('../models'); //index.js par défaut
 const { Sequelize } = require('sequelize');
 
 const addMangaController = {
@@ -14,7 +14,7 @@ const addMangaController = {
                     format,
                     status,
                     author,
-                    // image
+                    image
                 } = req.body;
 
 
@@ -23,8 +23,8 @@ const addMangaController = {
                 !original_title ||
                 !format ||
                 !status ||
-                !author
-                // !image
+                !author ||
+                !image
                 ) {
                     return res.render('addMangaForm', {
                         error : "Oups, Il faut remplir tous les champs!"}
@@ -47,25 +47,32 @@ const addMangaController = {
                     format,
                     status,
                     author,
-                    image: ''
+                    image,
                 })
 
-    console.log(newTitle);
+            //console.log(newTitle);
 
-            console.log('Titre ajouté à la BDD', newTitle)
+            //console.log('Titre ajouté à la BDD', newTitle)
 
-                let message = "Le manga a été ajoutée"
+            let message = "Le manga a été ajoutée"
 
-                console.log('Manga ajoutée')
+            //console.log('Manga ajoutée')
 
-            return res.render('/form', { message})
+            return res.render('/form', { message, tags})
 
             } catch(error){
             console.log(error.message)
             console.log(error.stack)
             return res.status(500).send('Une erreur sur addMangaController')
         }
+    },
+
+    getTags : async (req, res) => {
+
+        const tags = await Tag.findAll()
+                console.log(tags)
     }
+
 }
 
 module.exports = addMangaController;

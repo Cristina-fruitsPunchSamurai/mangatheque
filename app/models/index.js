@@ -4,6 +4,7 @@ const User = require('./user');
 const Role = require('./role');
 
 // * BD et Tag
+//0,N
 Bd.belongsToMany(Tag,{
     as: 'tags',
     through: 'bd_has_tag',
@@ -11,6 +12,7 @@ Bd.belongsToMany(Tag,{
     otherKey: 'tag_id',
 })
 
+//0,N
 Tag.belongsToMany(Bd, {
     as: 'mangas',
     through: 'bd_has_tag',
@@ -19,11 +21,13 @@ Tag.belongsToMany(Bd, {
 });
 
 // * User et Role
+//1,1
 User.belongsTo(Role,{
     foreignKey:'role_id',
     as:'role',
 });
 
+//1, N
 Role.hasMany(User,{
     foreignKey: 'role_id',
     as: 'users',

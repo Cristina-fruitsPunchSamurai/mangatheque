@@ -4,7 +4,7 @@ const tagController = {
     showTags : async (req, res) =>{
         try{
             const tags = await Tag.findAll();
-
+            //console.log(tags)
             return res.render('categories', {tags})
 
         }catch(error) {

@@ -32,9 +32,9 @@ const adminController = {
     async insertManga(req,res) {
         const formInfo = req.body
 
-       try{
-           const result = await dataMapper.insertMangaDB(formInfo);
-           res.send('Ajout effectué')
+    try{
+        const result = await dataMapper.insertMangaDB(formInfo);
+        res.send('Ajout effectué')
        } catch (error){
             console.log(error)
             res.status(500).send('Error on insertManga')

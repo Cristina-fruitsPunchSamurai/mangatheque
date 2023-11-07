@@ -7,7 +7,7 @@
     <div class="liste-bd-tag-header">
         <div class="content">
             <p class="tag-item manga__category__<%= mangaOfTag.name %>">
-                  <%= mangaOfTag.name %>
+                <%= mangaOfTag.name %>
             </p>
             <p>
                 You have read or watched <%= titleCount %> works on this
@@ -25,19 +25,20 @@
     <div class="manga__tag-container">
         <% mangaOfTag.mangas.forEach((oeuvre) => {%>
             <div class="manga__card">
-                <img class="manga__card-image" src="<%= oeuvre.image %>">
-                <div class="manga__card-info">
-                    <p>
-                        <%= oeuvre.title %>
-                    </p>
-                    <p>
-                        Author : <%= oeuvre.author %>
-                    </p>
-                </div>
+                <a href="/manga/<%= oeuvre.id %>">
+                    <img class="manga__card-image" src="<%= oeuvre.image %>">
+                    <div class="manga__card-info">
+                        <p class="manga__card-info-title">
+                            <%= oeuvre.title %>
+                        </p>
+                        <p>
+                            Author : <%= oeuvre.author %>
+                        </p>
+                    </div>
+                </a>
             </div>
+
         <%})%>
     </div>
 </section>
-</body>
-
-</html>
+<%- include ('partials/footer') %>

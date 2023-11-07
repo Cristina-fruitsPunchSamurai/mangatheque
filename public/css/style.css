@@ -41,7 +41,6 @@ body {
     height: 5rem;
 }
 
-
 .list-text{
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
@@ -279,20 +278,28 @@ button {
 
 /* -> Manga detail */
 .mangaDetail__container {
-    width: 400px;
-    height: auto;
+    width: 50rem;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: 10rem;
     font-family: 'Rubik', sans-serif;
     font-size: 1em;
+    display: flex;
     align-items: center;
+}
+
+.mangaDetail_rigth{
+    padding-left: 2rem;
+}
+
+.mangaDetail-rating{
+    padding-left: 1rem;
 }
 
 .mangaDetail__img {
     border-radius: 25px;
     padding: 10px;
-    width:90%;
+    width:300px;
     height:auto;
 }
 
@@ -364,19 +371,26 @@ button {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    border: solid #000000;
+    border: solid gray;
     width: 200px;
     font-family: 'Rubik', sans-serif;
     margin: 1%;
+    border-radius: 15px;
 }
 
 .manga__card-info{
     display: flex;
     flex-direction: column;
+    padding-left: 0.5rem;
+}
+
+.manga__card-info-title{
+    font-weight: bold;
 }
 
 .manga__card-image {
     width: 100%;
+    border-radius: 15px;
 }
 
 /* -> Register */
@@ -447,4 +461,22 @@ button {
     width: 60%;
     margin-top: 7rem;
     line-height: 30px;
+}
+
+
+.search-form{
+    margin-left: auto;
+    margin-right: auto;
+    width: 40rem;
+    display: flex;
+    gap: 20px;
+}
+
+.search-form-container{
+    margin-top: 8rem;
+}
+
+.search-form-title{
+    text-align: center;
+    margin-bottom: 3rem;
 }

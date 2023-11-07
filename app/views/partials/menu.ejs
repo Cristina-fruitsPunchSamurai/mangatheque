@@ -25,10 +25,25 @@
             <a href="/list/" class="navbar-item">
                 Books
             </a>
-            <a href="/favorites" class="navbar-item">
-                Favorites
-            </a>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                More
+                </a>
+                <div class="navbar-dropdown">
+                    <a href="/form" class="navbar-item">
+                        Add Manga
+                    </a>
+                    <a class="navbar-item">
+                        Favorites
+                    </a>
+                    <a href="/recherche" class="navbar-item">
+                        Recherche
+                    </a>
+                </div>
+            </div>
         </div>
+
+
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
@@ -50,36 +65,5 @@
                 </div>
             </div>
         </div>
-    </div>
+
 </nav>
-
-
-<!--
-<div class="menu">
-    <div class="menu__titre">
-        <a class="menu__link" href="/"> Home </a>
-    </div>
-<!--     <div class="menu__titre">
-        <a class="menu__link" href="/admin/addManga/"> Add new manga </a>
-    </div> -->
-        <!-- <div class="menu__titre">
-            <a class="menu__link" href="/categories"> Categories </a>
-        </div>
-        <!-- <%if (!locals.user) {%> -->
-        <!-- <div class="menu__titre">
-            <a class="menu__link" href="/register"> Signup </a>
-        </div>
-        <div class="menu__titre">
-            <a class="menu__link" href="/login"> Login </a>
-        </div> -->
-    <!-- <%} else {%> -->
-        <!-- <div class="menu__titre">
-            <!-- <a class="menu__link" href="/logout"> <%= locals.user.username %> </a> -->
-        <!-- </div>
-        <div class="menu__titre">
-            <a class="menu__link" href="/logout"> Logout </a>
-        </div> -->
-
-    <!-- <%}%> -->
-
-<!-- </div> -->

@@ -50,7 +50,7 @@ const signupController = {
             password: encryptedPassword,
             role_id : 1,
         });
-        console.log(newUser)
+       // console.log(newUser)
 
         res.render('login', {
             message: 'Vous pouvez maintenant vous connecter !',

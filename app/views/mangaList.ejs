@@ -10,15 +10,11 @@
     <div class="content is-small manga-list">
         <h1>
             <% if(locals.user) {%>
-                 <%= locals.user.username %>,
+                <%= locals.user.username %>,
                 <% }%> You have read : <%= titlesCount %> books 👏 !
         </h1>
-    </div>
 
-    <div class="buttons ">
-        <button class="button is-primary add-manga-btn">Add manga +</button>
     </div>
-
 
     <% if (locals.titles && locals.titles.length > 0 ){%>
         <div class="mangaList__container">
@@ -57,34 +53,5 @@
 </main>
 
 
-<!-- -> Modal ajout manga -->
-<div class="modal" id="add-card-modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-        <form>
-            <div class="modal-card-head">
-                <p class="modal-card-title">Ajouter une carte</p>
-                <button class="delete close" type="button" aria-label="close"></button>
-            </div>
 
-            <div class="modal-card-body">
-                <label class="label">Contenu</label>
-                <input class="input" type="text" name="content" placeholder="Contenu de la carte">
-            </div>
-
-            <div class="modal-card-body">
-                <label class="label">Couleur</label>
-                <input class="input" type="color" name="color" placeholder="Couleur de la carte" value="#ff00ff">
-            </div>
-
-            <div class="modal-card-foot">
-                <button class="button is-success">Ajouter</button>
-                <button class="button close" type="button">Annuler</button>
-            </div>
-        </form>
-    </div>
-</div>
-<script src="../../app-front.js" ></script>
-</body>
-
-</html>
+<%- include ('partials/footer') %>

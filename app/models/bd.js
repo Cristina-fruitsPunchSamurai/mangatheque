@@ -1,8 +1,9 @@
 const {Sequelize, DataTypes} = require('sequelize');
 const sequelize = require('../database');
 
+// On peut destructurer {Model } de sequelize
 class Bd extends Sequelize.Model{}
-
+//méthode  statique  du Core modèle. La classe BD hérite des méthodes d'instance fournis par Sequelize
 Bd.init(
     {
         title: {

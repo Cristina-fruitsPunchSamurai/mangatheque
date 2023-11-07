@@ -17,6 +17,8 @@ router.get('/', homeController.welcome);
 router.get('/list', mangaController.mangaList);
 router.get('/manga/:id', mangaController.mangaDetail);
 
+router.get('/recherche', mangaController.searchMangaForm)
+
 router.get('/form', addMangaController.addMangaForm);
 router.post('/form', addMangaController.createNewTitle);
 
